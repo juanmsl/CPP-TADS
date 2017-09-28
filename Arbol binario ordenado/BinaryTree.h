@@ -11,12 +11,12 @@ class BinaryTree {
 	protected:
 		int weight;
 		NodeBinaryTree<T>* root;
-	
+
 	public:
 		// CONSTRUCTOR Y DESTRUCTOR
 		BinaryTree();
 		virtual ~BinaryTree();
-		
+
 		// METODOS ENCAPSULADORES
 		const int& getWeight() const;
 		std::vector<T> getPostOrder();
@@ -39,7 +39,7 @@ class BinaryTree {
 		BinaryTree<T> copyPostOrder();
 		BinaryTree<T> copyPreOrder();
 		BinaryTree<T> copyInOrder();
-		bool compare(BinaryTree<T>& tree, std::ostream& out);
+		bool compare(BinaryTree<T>& tree);
 };
 
 # include "BinaryTree.hxx"

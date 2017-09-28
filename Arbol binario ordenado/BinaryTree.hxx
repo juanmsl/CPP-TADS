@@ -241,9 +241,8 @@ BinaryTree<T> BinaryTree<T>::copyInOrder() {
 }
 
 template<class T>
-bool BinaryTree<T>::compare(BinaryTree<T>& tree, std::ostream& out) {
+bool BinaryTree<T>::compare(BinaryTree<T>& tree) {
 	if(tree.getWeight() == this->weight) {
-		out << "El peso de ambos arboles es de: ["<<tree.getWeight()<<":"<<this->weight<<"]\n\n";
 		bool post = this->getPostOrder() == tree.getPostOrder();
 		bool pre = this->getPreOrder() == tree.getPreOrder();
 		bool in = this->getInOrder() == tree.getInOrder();
@@ -251,12 +250,6 @@ bool BinaryTree<T>::compare(BinaryTree<T>& tree, std::ostream& out) {
 		std::cout<<"PreOrder: ";(pre)? std::cout<<"Son iguales\n": std::cout<<"No son iguales\n";
 		std::cout<<"InOrder: ";(in)? std::cout<<"Son iguales\n": std::cout<<"No son iguales\n";
 		return post && pre && in;
-	} else {
-		if(out != NULL) {
-			out << "Los pesos de los arboles son diferentes\n";
-			out << "Peso del arbol A: " << this->weight <<"\n";
-			out << "Peso del arbol B: " << tree.getWeight() <<"\n";
-		}
-		return false;
 	}
+	return false;
 }
